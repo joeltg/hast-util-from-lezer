@@ -1,0 +1,41 @@
+{
+	"name": "hast-util-from-lezer",
+	"version": "0.0.1",
+	"description": "",
+	"type": "module",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joeltg/hast-util-from-lezer.git"
+	},
+	"keywords": [
+		"hast",
+		"hast-util",
+		"lezer"
+	],
+	"author": "Joel Gustafson",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/joeltg/hast-util-from-lezer/issues"
+	},
+	"homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
+	"devDependencies": {
+		"@codemirror/next": "*",
+		"lezer": "*",
+		"typescript": "^4.3.2"
+	},
+	"peerDependencies": {
+		"@codemirror/next": "^0.16.0",
+		"lezer": "^0.13.5"
+	},
+	"dependencies": {
+		"@types/hast": "^2.3.1"
+	}
+}
