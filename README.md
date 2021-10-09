@@ -29,7 +29,11 @@ const source = `function foo(a, b) {
 }`
 
 const tree = javascriptLanguage.parser.parse(source)
-const element = fromCodeMirror(source, tree)
+const element = {
+	type: "element",
+	tagName: "pre",
+	children: fromCodeMirror(source, tree),
+}
 console.log(toHtml(element))
 ```
 
@@ -45,9 +49,9 @@ yields the following HTML:
 
 ```typescript
 import type { Tree } from "@lezer/common"
-import type { Element } from "hast"
+import type { Element, Text } from "hast"
 
-declare function fromCodeMirror(source: string, tree: Tree): Element
+declare function fromCodeMirror(source: string, tree: Tree): (Element | Text)[]
 ```
 
 `tree` must already be highlighted if you want highlighting classnames in the resulting hast. If you pass `fromCodeMirror` a tree taken directly from a basic Lezer parser without highlighting, then you'll just get `<pre>{source}</pre>`.
