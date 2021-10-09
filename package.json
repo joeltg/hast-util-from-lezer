@@ -1,41 +1,44 @@
 {
-	"name": "hast-util-from-lezer",
+	"name": "hast-util-from-codemirror",
 	"version": "0.0.1",
-	"description": "",
+	"description": "Convert highlighted Lezer syntax trees to hast elements",
 	"type": "module",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
-		"lib"
+		"lib",
+		"styles"
 	],
 	"scripts": {
+		"build": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/joeltg/hast-util-from-lezer.git"
+		"url": "git+https://github.com/joeltg/hast-util-from-codemirror.git"
 	},
 	"keywords": [
+		"ast",
+		"abstract-syntax-tree",
+		"lezer",
+		"codemirror",
 		"hast",
-		"hast-util",
-		"lezer"
+		"hast-util"
 	],
 	"author": "Joel Gustafson",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/joeltg/hast-util-from-lezer/issues"
+		"url": "https://github.com/joeltg/hast-util-from-codemirror/issues"
 	},
-	"homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
+	"homepage": "https://github.com/joeltg/hast-util-from-codemirror#readme",
 	"devDependencies": {
-		"@codemirror/next": "*",
-		"lezer": "*",
+		"@codemirror/lang-javascript": "^0.19.2",
+		"hast-util-to-html": "^8.0.2",
 		"typescript": "^4.3.2"
 	},
-	"peerDependencies": {
-		"@codemirror/next": "^0.16.0",
-		"lezer": "^0.13.5"
-	},
 	"dependencies": {
+		"@codemirror/highlight": "^0.19.6",
+		"@lezer/common": "^0.15.7",
 		"@types/hast": "^2.3.1"
 	}
 }

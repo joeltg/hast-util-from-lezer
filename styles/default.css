@@ -1,0 +1,83 @@
+.cmt-link {
+	text-decoration: underline;
+}
+
+.cmt-heading {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.cmt-emphasis {
+	font-size: italic;
+}
+
+.cmt-strong {
+	font-weight: bold;
+}
+
+.cmt-strikethrough {
+	text-decoration: line-through;
+}
+
+.cmt-keyword {
+	color: #708;
+}
+
+.cmt-atom,
+.cmt-bool,
+.cmt-url,
+.cmt-labelName {
+	color: #219;
+}
+
+.cmt-literal,
+.cmt-inserted {
+	color: #164;
+}
+
+.cmt-string,
+.cmt-deleted {
+	color: #a11;
+}
+
+.cmt-string2 {
+	color: #e40;
+}
+
+.cmt-variableName .cmt-definition {
+	color: #00f;
+}
+
+.cmt-variableName .cmt-local {
+	color: #30a;
+}
+
+.cmt-variableName2,
+.cmt-macroName {
+	color: #256;
+}
+
+.cmt-typeName,
+.cmt-namespace {
+	color: #085;
+}
+
+.cmt-className {
+	color: #167;
+}
+
+.cmt-propertyName .cmt-definition {
+	color: #00c;
+}
+
+.cmt-comment {
+	color: #940;
+}
+
+.cmt-meta {
+	color: #7a757a;
+}
+
+.cmt-invalid {
+	color: #f00;
+}
