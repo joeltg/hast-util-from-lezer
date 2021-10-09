@@ -29,29 +29,25 @@ const source = `function foo(a, b) {
 }`
 
 const tree = javascriptLanguage.parser.parse(source)
-const element = {
-	type: "element",
-	tagName: "pre",
-	children: fromCodeMirror(source, tree),
-}
+const element = fromCodeMirror(source, tree)
 console.log(toHtml(element))
 ```
 
 yields the following HTML:
 
-```html
-<pre><span class="cmt-keyword">function</span> <span class="cmt-variableName">foo</span><span class="cmt-punctuation">(</span><span class="cmt-variableName cmt-definition">a</span><span class="cmt-punctuation">,</span> <span class="cmt-variableName cmt-definition">b</span><span class="cmt-punctuation">)</span> <span class="cmt-punctuation">{</span>
+```
+<code><span class="cmt-keyword">function</span> <span class="cmt-variableName">foo</span><span class="cmt-punctuation">(</span><span class="cmt-variableName cmt-definition">a</span><span class="cmt-punctuation">,</span> <span class="cmt-variableName cmt-definition">b</span><span class="cmt-punctuation">)</span> <span class="cmt-punctuation">{</span>
         <span class="cmt-keyword">return</span> <span class="cmt-keyword">null</span>
-<span class="cmt-punctuation">}</span></pre>
+<span class="cmt-punctuation">}</span></code>
 ```
 
 ## API
 
 ```typescript
 import type { Tree } from "@lezer/common"
-import type { Element, Text } from "hast"
+import type { Element } from "hast"
 
-declare function fromCodeMirror(source: string, tree: Tree): (Element | Text)[]
+declare function fromCodeMirror(source: string, tree: Tree): Element
 ```
 
 `tree` must already be highlighted if you want highlighting classnames in the resulting hast. If you pass `fromCodeMirror` a tree taken directly from a basic Lezer parser without highlighting, then you'll just get `<pre>{source}</pre>`.

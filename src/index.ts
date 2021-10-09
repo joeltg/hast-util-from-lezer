@@ -3,7 +3,7 @@ import { classHighlightStyle, highlightTree } from "@codemirror/highlight"
 import type { Element, Text } from "hast"
 import type { Tree } from "@lezer/common"
 
-export function fromCodeMirror(source: string, tree: Tree): (Element | Text)[] {
+export function fromCodeMirror(source: string, tree: Tree): Element {
 	const children: (Element | Text)[] = []
 	let index = 0
 	highlightTree(tree, classHighlightStyle.match, (from, to, classes) => {
@@ -25,5 +25,5 @@ export function fromCodeMirror(source: string, tree: Tree): (Element | Text)[] {
 		children.push({ type: "text", value: source.slice(index) })
 	}
 
-	return children
+	return { type: "element", tagName: "code", children }
 }
