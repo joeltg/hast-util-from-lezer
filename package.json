@@ -1,6 +1,6 @@
 {
 	"name": "hast-util-from-codemirror",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "Render highlited Lezer syntax trees to hast",
 	"type": "module",
 	"main": "lib/index.js",
