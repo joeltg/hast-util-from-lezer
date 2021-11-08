@@ -11,7 +11,7 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "ava"
 	},
 	"repository": {
 		"type": "git",
@@ -32,6 +32,9 @@
 	},
 	"homepage": "https://github.com/joeltg/hast-util-from-codemirror#readme",
 	"devDependencies": {
+		"@codemirror/lang-javascript": "^0.19.2",
+		"ava": "^4.0.0-rc.1",
+		"hast-util-to-html": "^8.0.3",
 		"typescript": "^4.3.2"
 	},
 	"dependencies": {
