@@ -44,11 +44,11 @@
 	color: #e40;
 }
 
-.cmt-variableName .cmt-definition {
+.cmt-variableName.cmt-definition {
 	color: #00f;
 }
 
-.cmt-variableName .cmt-local {
+.cmt-variableName.cmt-local {
 	color: #30a;
 }
 
@@ -66,7 +66,7 @@
 	color: #167;
 }
 
-.cmt-propertyName .cmt-definition {
+.cmt-propertyName.cmt-definition {
 	color: #00c;
 }
 
