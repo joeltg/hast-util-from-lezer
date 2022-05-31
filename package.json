@@ -1,5 +1,5 @@
 {
-	"name": "hast-util-from-codemirror",
+	"name": "hast-util-from-lezer",
 	"version": "0.3.2",
 	"description": "Render styled Lezer syntax trees to hast",
 	"type": "module",
@@ -15,31 +15,30 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/joeltg/hast-util-from-codemirror.git"
+		"url": "git+https://github.com/joeltg/hast-util-from-lezer.git"
 	},
 	"keywords": [
 		"ast",
 		"abstract-syntax-tree",
 		"lezer",
-		"codemirror",
 		"hast",
 		"hast-util"
 	],
 	"author": "Joel Gustafson",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/joeltg/hast-util-from-codemirror/issues"
+		"url": "https://github.com/joeltg/hast-util-from-lezer/issues"
 	},
-	"homepage": "https://github.com/joeltg/hast-util-from-codemirror#readme",
+	"homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
 	"devDependencies": {
-		"@codemirror/lang-javascript": "^0.19.2",
-		"ava": "^4.0.1",
+		"ava": "^4.2.0",
 		"hast-util-to-html": "^8.0.3",
 		"typescript": "^4.3.2"
 	},
 	"dependencies": {
-		"@codemirror/highlight": "^0.19.6",
-		"@lezer/common": "^0.15.7",
-		"@types/hast": "^2.3.1"
+		"@lezer/common": "^0.16.0",
+		"@lezer/highlight": "^0.16.0",
+		"@lezer/javascript": "^0.16.0",
+		"@types/hast": "^2.3.4"
 	}
 }

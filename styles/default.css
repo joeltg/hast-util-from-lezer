@@ -1,83 +1,83 @@
-.cmt-link {
+.tok-link {
 	text-decoration: underline;
 }
 
-.cmt-heading {
+.tok-heading {
 	text-decoration: underline;
 	font-weight: bold;
 }
 
-.cmt-emphasis {
+.tok-emphasis {
 	font-size: italic;
 }
 
-.cmt-strong {
+.tok-strong {
 	font-weight: bold;
 }
 
-.cmt-strikethrough {
+.tok-strikethrough {
 	text-decoration: line-through;
 }
 
-.cmt-keyword {
+.tok-keyword {
 	color: #708;
 }
 
-.cmt-atom,
-.cmt-bool,
-.cmt-url,
-.cmt-labelName {
+.tok-atom,
+.tok-bool,
+.tok-url,
+.tok-labelName {
 	color: #219;
 }
 
-.cmt-literal,
-.cmt-inserted {
+.tok-literal,
+.tok-inserted {
 	color: #164;
 }
 
-.cmt-string,
-.cmt-deleted {
+.tok-string,
+.tok-deleted {
 	color: #a11;
 }
 
-.cmt-string2 {
+.tok-string2 {
 	color: #e40;
 }
 
-.cmt-variableName.cmt-definition {
+.tok-variableName.tok-definition {
 	color: #00f;
 }
 
-.cmt-variableName.cmt-local {
+.tok-variableName.tok-local {
 	color: #30a;
 }
 
-.cmt-variableName2,
-.cmt-macroName {
+.tok-variableName2,
+.tok-macroName {
 	color: #256;
 }
 
-.cmt-typeName,
-.cmt-namespace {
+.tok-typeName,
+.tok-namespace {
 	color: #085;
 }
 
-.cmt-className {
+.tok-className {
 	color: #167;
 }
 
-.cmt-propertyName.cmt-definition {
+.tok-propertyName.tok-definition {
 	color: #00c;
 }
 
-.cmt-comment {
+.tok-comment {
 	color: #940;
 }
 
-.cmt-meta {
+.tok-meta {
 	color: #7a757a;
 }
 
-.cmt-invalid {
+.tok-invalid {
 	color: #f00;
 }

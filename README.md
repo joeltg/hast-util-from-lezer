@@ -1,4 +1,4 @@
-# hast-util-from-codemirror
+# hast-util-from-lezer
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![license](https://img.shields.io/github/license/joeltg/hast-util-from-codemirror)](https://opensource.org/licenses/MIT) [![NPM version](https://img.shields.io/npm/v/hast-util-from-codemirror)](https://www.npmjs.com/package/hast-util-from-codemirror) ![TypeScript types](https://img.shields.io/npm/types/hast-util-from-codemirror) ![lines of code](https://img.shields.io/tokei/lines/github/joeltg/hast-util-from-codemirror)
 
@@ -15,13 +15,13 @@ Render styled [Lezer syntax trees](https://github.com/lezer-parser/common) to [h
 ## Install
 
 ```
-npm i hast-util-from-codemirror
+npm i hast-util-from-lezer
 ```
 
 ## Usage
 
 ```typescript
-import { fromCodeMirror } from "hast-util-from-codemirror"
+import { fromLezer } from "hast-util-from-lezer"
 import { typescriptLanguage } from "@codemirror/lang-javascript"
 import { toHtml } from "hast-util-to-html"
 
@@ -30,16 +30,16 @@ const source = `function norm(a: number, b: number): number {
 }`
 
 const tree = javascriptLanguage.parser.parse(source)
-const element = fromCodeMirror(source, tree)
+const element = fromLezer(source, tree)
 console.log(toHtml(element))
 ```
 
 yields the following HTML:
 
 ```
-<span class="cmt-keyword">function</span> <span class="cmt-variableName">norm</span><span class="cmt-punctuation">(</span><span class="cmt-variableName cmt-definition">a</span><span class="cmt-punctuation">:</span> <span class="cmt-typeName">number</span><span class="cmt-punctuation">,</span> <span class="cmt-variableName cmt-definition">b</span><span class="cmt-punctuation">:</span> <span class="cmt-typeName">number</span><span class="cmt-punctuation">)</span><span class="cmt-punctuation">:</span> <span class="cmt-typeName">number</span> <span class="cmt-punctuation">{</span>
-        <span class="cmt-keyword">return</span> <span class="cmt-variableName">Math</span><span class="cmt-operator">.</span><span class="cmt-propertyName">sqrt</span><span class="cmt-punctuation">(</span><span class="cmt-variableName">Math</span><span class="cmt-operator">.</span><span class="cmt-propertyName">pow</span><span class="cmt-punctuation">(</span><span class="cmt-variableName">a</span><span class="cmt-punctuation">,</span> <span class="cmt-number">2</span><span class="cmt-punctuation">)</span> <span class="cmt-operator">+</span> <span class="cmt-variableName">Math</span><span class="cmt-operator">.</span><span class="cmt-propertyName">pow</span><span class="cmt-punctuation">(</span><span class="cmt-variableName">b</span><span class="cmt-punctuation">,</span> <span class="cmt-number">2</span><span class="cmt-punctuation">)</span><span class="cmt-punctuation">)</span>
-<span class="cmt-punctuation">}</span>
+<span class="tok-keyword">function</span> <span class="tok-variableName">norm</span><span class="tok-punctuation">(</span><span class="tok-variableName tok-definition">a</span><span class="tok-punctuation">:</span> <span class="tok-typeName">number</span><span class="tok-punctuation">,</span> <span class="tok-variableName tok-definition">b</span><span class="tok-punctuation">:</span> <span class="tok-typeName">number</span><span class="tok-punctuation">)</span><span class="tok-punctuation">:</span> <span class="tok-typeName">number</span> <span class="tok-punctuation">{</span>
+        <span class="tok-keyword">return</span> <span class="tok-variableName">Math</span><span class="tok-operator">.</span><span class="tok-propertyName">sqrt</span><span class="tok-punctuation">(</span><span class="tok-variableName">Math</span><span class="tok-operator">.</span><span class="tok-propertyName">pow</span><span class="tok-punctuation">(</span><span class="tok-variableName">a</span><span class="tok-punctuation">,</span> <span class="tok-number">2</span><span class="tok-punctuation">)</span> <span class="tok-operator">+</span> <span class="tok-variableName">Math</span><span class="tok-operator">.</span><span class="tok-propertyName">pow</span><span class="tok-punctuation">(</span><span class="tok-variableName">b</span><span class="tok-punctuation">,</span> <span class="tok-number">2</span><span class="tok-punctuation">)</span><span class="tok-punctuation">)</span>
+<span class="tok-punctuation">}</span>
 ```
 
 Wrap this inside a `pre` tag and add [styles/default.css](./styles/default.css) for high-quality runtime pure-JS syntax highlighting!
@@ -52,12 +52,10 @@ Wrap this inside a `pre` tag and add [styles/default.css](./styles/default.css) 
 import type { Tree } from "@lezer/common"
 import type { Root } from "hast"
 
-declare function fromCodeMirror(source: string, tree: Tree): Root
+declare function fromLezer(source: string, tree: Tree): Root
 ```
 
-`tree` must already be styled if you want highlighting classnames in the resulting hast. Generally, this just means that you need to import a _CodeMirror language_ like `@codemmirror/lang-javascript` and not a basic Lezer parser like `@lezer/javascript`. If you give `fromCodeMirror` a tree taken directly from a basic Lezer parser, then you'll just get the source back as a single text node.
-
-Due to technical limitations, hast-util-from-codemirror only uses [`classHighlightStyle`](https://codemirror.net/6/docs/ref/#highlight.classHighlightStyle) internally - you can't provide it with a custom [`HighlightStyle`](https://codemirror.net/6/docs/ref/#highlight.HighlightStyle) and it can't use highlight styles that inline CSS.
+`tree` must already be styled if you want highlighting classnames in the resulting hast. This means the Lezer grammar you're using has to support highlight style props, typically included with a `highlight.js` file and a `@external propSource` directive in the grammar source. All the Lezer grammars maintained by the Lezer project do; you shouldn't have to worry about it.
 
 ## Contributing
 

@@ -1,9 +1,9 @@
 import { readFileSync, writeFileSync } from "fs"
 
 import { toHtml } from "hast-util-to-html"
-import { javascriptLanguage } from "@codemirror/lang-javascript"
+import { parser } from "@lezer/javascript"
 
-import { fromCodeMirror } from "../lib/index.js"
+import { fromLezer } from "../lib/index.js"
 
 import test from "ava"
 
@@ -21,8 +21,8 @@ const template = (content) => `<!DOCTYPE html>
 
 test("example.js", (t) => {
 	const source = readFileSync("./test/example.js", "utf-8")
-	const tree = javascriptLanguage.parser.parse(source)
-	const root = fromCodeMirror(source, tree)
+	const tree = parser.parse(source)
+	const root = fromLezer(source, tree)
 	writeFileSync("./test/example.html", template(toHtml(root)))
 	t.pass()
 })

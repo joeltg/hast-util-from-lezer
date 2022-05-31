@@ -1,12 +1,13 @@
-import { classHighlightStyle, highlightTree } from "@codemirror/highlight"
+import { highlightTree, classHighlighter } from "@lezer/highlight"
 
 import type { Element, Text, Root } from "hast"
 import type { Tree } from "@lezer/common"
 
-export function fromCodeMirror(source: string, tree: Tree): Root {
+export function fromLezer(source: string, tree: Tree): Root {
 	const children: (Element | Text)[] = []
 	let index = 0
-	highlightTree(tree, classHighlightStyle.match, (from, to, classes) => {
+
+	highlightTree(tree, classHighlighter, (from, to, classes) => {
 		if (from > index) {
 			children.push({ type: "text", value: source.slice(index, from) })
 		}
