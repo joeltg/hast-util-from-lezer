@@ -1,6 +1,6 @@
 {
 	"name": "hast-util-from-lezer",
-	"version": "0.3.2",
+	"version": "0.4.0",
 	"description": "Render styled Lezer syntax trees to hast",
 	"type": "module",
 	"main": "lib/index.js",
