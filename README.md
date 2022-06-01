@@ -22,14 +22,14 @@ npm i hast-util-from-lezer
 
 ```typescript
 import { fromLezer } from "hast-util-from-lezer"
-import { typescriptLanguage } from "@codemirror/lang-javascript"
+import { parser as javascriptParser } from "@lezer/javascript"
 import { toHtml } from "hast-util-to-html"
 
 const source = `function norm(a: number, b: number): number {
 	return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
 }`
 
-const tree = javascriptLanguage.parser.parse(source)
+const tree = javascriptParser.parse(source)
 const element = fromLezer(source, tree)
 console.log(toHtml(element))
 ```
