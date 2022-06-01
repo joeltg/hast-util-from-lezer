@@ -1,6 +1,6 @@
 # hast-util-from-lezer
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![license](https://img.shields.io/github/license/joeltg/hast-util-from-codemirror)](https://opensource.org/licenses/MIT) [![NPM version](https://img.shields.io/npm/v/hast-util-from-codemirror)](https://www.npmjs.com/package/hast-util-from-codemirror) ![TypeScript types](https://img.shields.io/npm/types/hast-util-from-codemirror) ![lines of code](https://img.shields.io/tokei/lines/github/joeltg/hast-util-from-codemirror)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![license](https://img.shields.io/github/license/joeltg/hast-util-from-lezer)](https://opensource.org/licenses/MIT) [![NPM version](https://img.shields.io/npm/v/hast-util-from-lezer)](https://www.npmjs.com/package/hast-util-from-lezer) ![TypeScript types](https://img.shields.io/npm/types/hast-util-from-lezer) ![lines of code](https://img.shields.io/tokei/lines/github/joeltg/hast-util-from-lezer)
 
 Render styled [Lezer syntax trees](https://github.com/lezer-parser/common) to [hast](https://github.com/syntax-tree/hast).
 
@@ -59,7 +59,7 @@ declare function fromLezer(source: string, tree: Tree): Root
 
 ## Contributing
 
-hast-util-from-codemirror is meant to be a minimal utility library - it's unlikely that I'll want to add new features to it, but if you find bugs, have interface or API suggestions, or general feedback, feel free to open an issue to discuss it!
+hast-util-from-lezer is meant to be a minimal utility library - it's unlikely that I'll want to add new features to it, but if you find bugs, have interface or API suggestions, or general feedback, feel free to open an issue to discuss it!
 
 ## License
 
