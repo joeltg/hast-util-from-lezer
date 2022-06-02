@@ -42,10 +42,6 @@ yields the following HTML:
 <span class="tok-punctuation">}</span>
 ```
 
-Wrap this inside a `pre` tag and add a stylesheet for high-quality runtime pure-JS syntax highlighting!
-
-![highlighted code snipped](example.png)
-
 ## API
 
 ```typescript
