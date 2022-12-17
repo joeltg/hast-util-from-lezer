@@ -31,14 +31,14 @@
 	},
 	"homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
 	"devDependencies": {
-		"@lezer/javascript": "^1.0.2",
-		"ava": "^5.0.1",
+		"@lezer/javascript": "^1.3.2",
+		"ava": "^5.1.0",
 		"hast-util-to-html": "^8.0.3",
-		"typescript": "^4.8.4"
+		"typescript": "^4.9.4"
 	},
 	"dependencies": {
-		"@lezer/common": "^1.0.1",
-		"@lezer/highlight": "^1.1.2",
+		"@lezer/common": "^1.0.2",
+		"@lezer/highlight": "^1.1.3",
 		"@types/hast": "^2.3.4"
 	}
 }
