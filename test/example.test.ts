@@ -1,13 +1,13 @@
-import { readFileSync, writeFileSync } from "fs"
+import { readFileSync, writeFileSync } from "node:fs"
 
-import { toHtml } from "hast-util-to-html"
 import { parser } from "@lezer/javascript"
+import { toHtml } from "hast-util-to-html"
 
-import { fromLezer } from "../lib/index.js"
+import { fromLezer } from "hast-util-from-lezer"
 
 import test from "ava"
 
-const template = (content) => `<!DOCTYPE html>
+const template = (content: string) => `<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />

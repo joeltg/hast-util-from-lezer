@@ -1,11 +1,8 @@
 {
-	"include": ["src/*"],
+	"include": ["src"],
+	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
-		"strict": true,
-		"module": "ESNext",
-		"target": "ES2020",
-		"outDir": "lib",
-		"declaration": true,
-		"moduleResolution": "node"
+		"rootDir": "src",
+		"outDir": "lib"
 	}
 }

@@ -10,9 +10,14 @@
 		"styles"
 	],
 	"scripts": {
-		"build": "tsc",
+		"dev": "tsc --build tsconfig.json test/tsconfig.json --watch",
+		"build": "tsc --build tsconfig.json test/tsconfig.json",
+		"clean": "tsc --build tsconfig.json test/tsconfig.json --clean",
 		"test": "ava"
 	},
+	"workspaces": [
+		"."
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/joeltg/hast-util-from-lezer.git"
@@ -31,7 +36,9 @@
 	},
 	"homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
 	"devDependencies": {
+		"@ava/typescript": "^4.0.0",
 		"@lezer/javascript": "^1.4.2",
+		"@types/node": "^18.15.11",
 		"ava": "^5.2.0",
 		"hast-util-to-html": "^8.0.4",
 		"typescript": "^5.0.3"
