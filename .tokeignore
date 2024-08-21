@@ -1,8 +1,0 @@
-README.md
-CHANGELOG.md
-LICENSE
-package.json
-package-lock.json
-tsconfig.json
-test/
-ava.config.js
