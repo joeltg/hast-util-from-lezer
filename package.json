@@ -36,11 +36,11 @@
   "homepage": "https://github.com/joeltg/hast-util-from-lezer#readme",
   "devDependencies": {
     "@ava/typescript": "^6.0.0",
-    "@lezer/javascript": "^1.4.21",
-    "@types/node": "^22.13.5",
-    "ava": "^6.2.0",
+    "@lezer/javascript": "^1.5.3",
+    "@types/node": "^22.18.4",
+    "ava": "^6.4.1",
     "hast-util-to-html": "^9.0.5",
-    "typescript": "^5.7.3"
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@lezer/common": "^1.2.3",
